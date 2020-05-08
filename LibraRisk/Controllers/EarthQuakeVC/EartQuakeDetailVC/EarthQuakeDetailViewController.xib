@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EarthQuakeDetailViewController" customModule="LibraRisk" customModuleProvider="target">
+            <connections>
+                <outlet property="earthQuakeWebView" destination="yPQ-fl-DMT" id="w27-f0-cmP"/>
+                <outlet property="myView" destination="QD1-Zr-VTg" id="9Vv-5w-R5O"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="QD1-Zr-VTg">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+                <webView contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPQ-fl-DMT">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="01C-5l-5q6"/>
+                    </connections>
+                </webView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QD1-Zr-VTg" secondAttribute="bottom" id="0IW-sb-StX"/>
+                <constraint firstItem="QD1-Zr-VTg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="8Lb-5O-waY"/>
+                <constraint firstItem="yPQ-fl-DMT" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Jum-XF-7cE"/>
+                <constraint firstItem="yPQ-fl-DMT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Rqh-X5-cxk"/>
+                <constraint firstAttribute="bottom" secondItem="yPQ-fl-DMT" secondAttribute="bottom" id="a6O-s3-X4f"/>
+                <constraint firstItem="QD1-Zr-VTg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="oBV-lF-eYO"/>
+                <constraint firstItem="yPQ-fl-DMT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="oXZ-3F-7dR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QD1-Zr-VTg" secondAttribute="trailing" id="ugY-Wk-dgn"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="89.0625"/>
+        </view>
+    </objects>
+</document>

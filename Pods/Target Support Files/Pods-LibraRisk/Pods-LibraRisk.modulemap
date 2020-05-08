@@ -1,0 +1,6 @@
+framework module Pods_LibraRisk {
+  umbrella header "Pods-LibraRisk-umbrella.h"
+
+  export *
+  module * { export * }
+}
