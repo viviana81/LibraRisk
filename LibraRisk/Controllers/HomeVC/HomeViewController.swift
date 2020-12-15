@@ -8,22 +8,17 @@
 
 import UIKit
 
+protocol HomeViewControllerDelegate: class {
+    func showEarthQuake()
+    func showSismicRisk()
+}
+
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var secondShadowView: UIView!
-    var tapGesture = UITapGestureRecognizer()
-    private let services: Services
-    
-    init(services: Services) {
-        self.services = services
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-        
-    }
+
+    var delegate: HomeViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,14 +42,11 @@ class HomeViewController: UIViewController {
     
     @objc
     func viewEartQuake(_ recognizer: UIGestureRecognizer) {
-       let earthQuake = EarthQuakeViewController(services: services)
-        navigationController?.pushViewController(earthQuake, animated: true)
+        delegate?.showEarthQuake()
     }
     
     @objc
     func openSismicRisk(_ recognizer: UIGestureRecognizer) {
-       let sismicRisk = SismicRiskViewController(services: services)
-        navigationController?.pushViewController(sismicRisk, animated: true)
+        delegate?.showSismicRisk()
     }
 }
-

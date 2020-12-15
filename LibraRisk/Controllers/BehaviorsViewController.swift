@@ -8,33 +8,26 @@
 
 import UIKit
 
+protocol BehaviorsViewControllerDelegate {
+    func openBehavior(_ behavior: Behavior)
+}
+
 class BehaviorsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var behaviors: [Behavior] = []
-    private let services: Services
-    
-    init(services: Services) {
-        self.services = services
-        super.init(nibName: nil, bundle: nil)
+   
+    var delegate: BehaviorsViewControllerDelegate?
+    var behaviors: [Behavior] = [] {
+        didSet {
+            tableView?.reloadData() // Attaccon un property observer su behaviors, in modo da ricaricare la tabella una volta che assegno l'array di behaviors
+        }
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-        
-    }
-    override func viewDidLoad() {
+   override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Comportamenti"
         tableView.register(BehaviorsTableViewCell.self)
-        
-        services.getBehaviors { (behaviors, error) in
-            if let behaviors = behaviors {
-                self.behaviors = behaviors
-                self.tableView.reloadData()
-            }
-        }
     }
 }
 
@@ -57,8 +50,7 @@ extension BehaviorsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let behavior = behaviors[indexPath.row]
-        let detail = BehaviorDetailViewController(behavior: behavior)
-        navigationController?.pushViewController(detail, animated: true)
+        delegate?.openBehavior(behavior)
+        
     }
-    
 }

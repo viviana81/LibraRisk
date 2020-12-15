@@ -36,7 +36,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "EE9D3805-1DD3-4C07-BD88-312951F984AD - 466e6464bd3b6292"
+                  uuid = "EE9D3805-1DD3-4C07-BD88-312951F984AD - b143255bc71ac272"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -51,7 +51,7 @@
                   offsetFromSymbolStart = "501">
                </Location>
                <Location
-                  uuid = "EE9D3805-1DD3-4C07-BD88-312951F984AD - 4fc58f52c3b0071b"
+                  uuid = "EE9D3805-1DD3-4C07-BD88-312951F984AD - b8e8ce6db991a7da"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -116,7 +116,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "D03E006D-EFC1-4510-BB23-FF3A7D0DF69E - ac3a636865178839"
+                  uuid = "D03E006D-EFC1-4510-BB23-FF3A7D0DF69E - 70f941cfb7391a78"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -131,7 +131,7 @@
                   offsetFromSymbolStart = "326">
                </Location>
                <Location
-                  uuid = "D03E006D-EFC1-4510-BB23-FF3A7D0DF69E - ac3a636865178839"
+                  uuid = "D03E006D-EFC1-4510-BB23-FF3A7D0DF69E - 70f941cfb7391a78"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -174,10 +174,40 @@
             filePath = "LibraRisk/PlacesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "97"
+            endingLineNumber = "97">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "136A1919-F832-42F9-8BFD-A617F100BC50"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LibraRisk/Controllers/HomeVC/HomeCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "showEarthQuake()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7EBBF3DD-03C0-4CDE-B77B-52C5625DB26F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LibraRisk/Controllers/HomeVC/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "viewEartQuake(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

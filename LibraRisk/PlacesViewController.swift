@@ -9,25 +9,18 @@
 import UIKit
 import PromiseKit
 
+protocol PlacesViewControllerDelegate: class {
+    func openDetail(withCollege college: College, andPlace place: Place)
+}
+
 class PlacesViewController: UIViewController {
     
     @IBOutlet weak var collegeTxtField: UITextField!
     @IBOutlet weak var placeTxtField: UITextField!
-    private let services: Services
     
+    weak var delegate: PlacesViewControllerDelegate?
     var selectedCollege: College?
     var selectedPlace: Place?
-    
-    init(services: Services) {
-        self.services = services
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-        
-    }
-    
     var places: [Place] = []
     var colleges: [College] = []
     
@@ -52,82 +45,16 @@ class PlacesViewController: UIViewController {
         title = "Collegi"
         collegeTxtField.inputView = collegePicker
         placeTxtField.inputView = placePicker
-        
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
 
-        // IN PARALLELO
-        let placesPromise = getPlaces()
-        let collegesPromise = getColleges()
-        
-        firstly {
-            when(fulfilled: placesPromise, collegesPromise)
-        }.done { places, colleges in
-            self.places = places
-            self.colleges = colleges
-        }.ensure {
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        }.catch { error in
-            print(error)
-        }
-        
-        /* IN SERIE
-        firstly { // Inizia con...
-            placesPromise
-        }.then { myPlaces -> Promise<[College]> in // quindi fai...
-            self.places = myPlaces
-            return collegesPromise
-        }.done { myColleges in // in conclusione...
-            self.colleges = myColleges
-            // Qui è il punto in cui la catena di chiamate ha finito (punto in cui fare solitamente reloadData o popolare la UI)
-        }.ensure { // assicurati che..
-            // Scatta in qualsiasi caso, sia Done che Catch
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        }.catch { error in // in caso di errore..
-            print(error)
-        }
-    */
-    }
-    
-    func getPlaces() -> Promise<[Place]> {
-        
-        return Promise<[Place]> { seal in
-            
-            services.getPlaces { (places, error) in
-                if let places = places {
-                    seal.fulfill(places)
-                } else if let error = error {
-                    seal.reject(error)
-                }
-            }
-        }
-    }
-    
-    func getColleges() -> Promise<[College]> {
-        
-        return Promise<[College]> { seal in
-            
-            services.getColleges { (colleges, error) in
-                if let colleges = colleges {
-                    seal.fulfill(colleges)
-                } else if let error = error {
-                    seal.reject(error)
-                }
-            }
-        }
-    }
-    
     @IBAction func action() {
         
         guard let selectedCollege = selectedCollege,
             let selectedPlace = selectedPlace else { return }
         
-        services.getCollegeResponse(place: selectedPlace, college: selectedCollege) { (collegeResponse, error) in
-           
-            if let collegeResponse = collegeResponse {
-                let detail = DetailCollegeViewController(collegeResponse: collegeResponse)
-                self.navigationController?.pushViewController(detail, animated: true)
-            }
-        }
+        delegate?.openDetail(withCollege: selectedCollege, andPlace: selectedPlace)
+        
     }
 }
 

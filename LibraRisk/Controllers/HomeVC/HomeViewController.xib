@@ -125,7 +125,7 @@
         <image name="slowmo" catalog="system" width="64" height="60"/>
         <image name="waveform.circle" catalog="system" width="64" height="60"/>
         <namedColor name="orange_view">
-            <color red="0.95649927850000005" green="0.61675578360000005" blue="0.14090579750000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.95599997043609619" green="0.61699998378753662" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

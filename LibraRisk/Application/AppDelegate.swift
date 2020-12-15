@@ -14,12 +14,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     let services = FakeServices()
+    private var applicationCoordinator: ApplicationCoordinator?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         setAppearance()
         window = UIWindow()
         
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let applicationCoordinator = ApplicationCoordinator(window: window, services: services)
+        
+        self.window = window
+        self.applicationCoordinator = applicationCoordinator
+        
+        applicationCoordinator.start()
+        
+        window.makeKeyAndVisible()
+        return true
+        
+      /*
         let home = HomeViewController(services: services)
         let homeNavigation = UINavigationController(rootViewController: home)
         homeNavigation.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
@@ -45,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = tabController
         window?.makeKeyAndVisible()
         
-        return true
+        return true */
     }
     
     func setAppearance() {

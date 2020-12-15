@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		A6D018330017AC29F808A45B /* Pods_LibraRisk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 512481443D7E7FC99FCB28B1 /* Pods_LibraRisk.framework */; };
+		B92095C72482424800D4B17F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92095C62482424800D4B17F /* Coordinator.swift */; };
+		B92095C92482425600D4B17F /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92095C82482425600D4B17F /* ApplicationCoordinator.swift */; };
+		B92095CB2482438400D4B17F /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92095CA2482438400D4B17F /* HomeCoordinator.swift */; };
+		B92095CD248243A200D4B17F /* PlacesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92095CC248243A100D4B17F /* PlacesCoordinator.swift */; };
+		B92095CF248243BB00D4B17F /* BehaviorsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92095CE248243BB00D4B17F /* BehaviorsCoordinator.swift */; };
+		B92095D1248243D400D4B17F /* NotificationsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92095D0248243D400D4B17F /* NotificationsCoordinator.swift */; };
 		B947C8F3245C1676002B9B03 /* BehaviorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B947C8F1245C1676002B9B03 /* BehaviorsTableViewCell.swift */; };
 		B947C8F4245C1676002B9B03 /* BehaviorsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B947C8F2245C1676002B9B03 /* BehaviorsTableViewCell.xib */; };
 		B947C8F8245C2376002B9B03 /* BehaviorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B947C8F6245C2376002B9B03 /* BehaviorDetailViewController.swift */; };
@@ -60,6 +66,12 @@
 /* Begin PBXFileReference section */
 		512481443D7E7FC99FCB28B1 /* Pods_LibraRisk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibraRisk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		766D9949012258B60360121B /* Pods-LibraRisk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibraRisk.debug.xcconfig"; path = "Target Support Files/Pods-LibraRisk/Pods-LibraRisk.debug.xcconfig"; sourceTree = "<group>"; };
+		B92095C62482424800D4B17F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B92095C82482425600D4B17F /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		B92095CA2482438400D4B17F /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		B92095CC248243A100D4B17F /* PlacesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesCoordinator.swift; sourceTree = "<group>"; };
+		B92095CE248243BB00D4B17F /* BehaviorsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehaviorsCoordinator.swift; sourceTree = "<group>"; };
+		B92095D0248243D400D4B17F /* NotificationsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCoordinator.swift; sourceTree = "<group>"; };
 		B947C8F1245C1676002B9B03 /* BehaviorsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BehaviorsTableViewCell.swift; path = LibraRisk/Controllers/BehaviorsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		B947C8F2245C1676002B9B03 /* BehaviorsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BehaviorsTableViewCell.xib; path = LibraRisk/Controllers/BehaviorsTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		B947C8F6245C2376002B9B03 /* BehaviorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BehaviorDetailViewController.swift; path = LibraRisk/Controllers/BehaviorsVC/BehaviorDetailViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -130,6 +142,15 @@
 				512481443D7E7FC99FCB28B1 /* Pods_LibraRisk.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B92095C52482422D00D4B17F /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				B92095C62482424800D4B17F /* Coordinator.swift */,
+				B92095C82482425600D4B17F /* ApplicationCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		B947C8F0245C164E002B9B03 /* BehaviorsTableViewCell */ = {
@@ -235,6 +256,7 @@
 		B9E744F6245967720096F185 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B92095C52482422D00D4B17F /* Coordinators */,
 				B9E7451D2459E1510096F185 /* SismicRiskVC */,
 				B9E745182459E0440096F185 /* EarthQuakeVC */,
 				B9E745132459D8630096F185 /* NotificationsVC */,
@@ -273,6 +295,7 @@
 		B9E744FA245967C60096F185 /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
+				B92095CA2482438400D4B17F /* HomeCoordinator.swift */,
 				B9E744E6245965E70096F185 /* HomeViewController.swift */,
 				B9E744FB245968320096F185 /* HomeViewController.xib */,
 			);
@@ -298,6 +321,7 @@
 		B9E745092459D7C00096F185 /* PlacesVC */ = {
 			isa = PBXGroup;
 			children = (
+				B92095CC248243A100D4B17F /* PlacesCoordinator.swift */,
 				B9E7450A2459D7F10096F185 /* PlacesViewController.swift */,
 				B9E7450B2459D7F10096F185 /* PlacesViewController.xib */,
 				B9E62CD7245FF60E00DC1ADA /* DetailCollegeViewController */,
@@ -308,6 +332,7 @@
 		B9E7450E2459D8230096F185 /* BehaviorsVC */ = {
 			isa = PBXGroup;
 			children = (
+				B92095CE248243BB00D4B17F /* BehaviorsCoordinator.swift */,
 				B9E7450F2459D8450096F185 /* BehaviorsViewController.swift */,
 				B9E745102459D8450096F185 /* BehaviorsViewController.xib */,
 				B947C8FA245C2651002B9B03 /* BehaviorDetailCollectionViewCell */,
@@ -320,6 +345,7 @@
 		B9E745132459D8630096F185 /* NotificationsVC */ = {
 			isa = PBXGroup;
 			children = (
+				B92095D0248243D400D4B17F /* NotificationsCoordinator.swift */,
 				B9E745142459D87E0096F185 /* NotificationsViewController.swift */,
 				B9E745152459D87E0096F185 /* NotificationsViewController.xib */,
 				B9E62CD2245C741F00DC1ADA /* NotificationsTableViewCell */,
@@ -551,13 +577,16 @@
 				B9E62CD5245C744C00DC1ADA /* NotificationsTableViewCell.swift in Sources */,
 				B9E744E7245965E70096F185 /* HomeViewController.swift in Sources */,
 				B9E62CDA245FF63B00DC1ADA /* DetailCollegeViewController.swift in Sources */,
+				B92095CB2482438400D4B17F /* HomeCoordinator.swift in Sources */,
 				B9E7450C2459D7F10096F185 /* PlacesViewController.swift in Sources */,
 				B9E62CE0245FFE6D00DC1ADA /* DetailCollegeCollectionViewCell.swift in Sources */,
 				B9E7452E245B086A0096F185 /* MockServices.swift in Sources */,
 				B9E7453E245B1EDC0096F185 /* SismicRiskDetailCollectionViewCell.swift in Sources */,
+				B92095C72482424800D4B17F /* Coordinator.swift in Sources */,
 				B9E745112459D8450096F185 /* BehaviorsViewController.swift in Sources */,
 				B9E74539245B1C840096F185 /* SismicRiskDetailViewController.swift in Sources */,
 				B9E74530245B0D4A0096F185 /* LibraRiskApi.swift in Sources */,
+				B92095CF248243BB00D4B17F /* BehaviorsCoordinator.swift in Sources */,
 				B9E744E3245965E70096F185 /* AppDelegate.swift in Sources */,
 				B9E745202459E16C0096F185 /* SismicRiskViewController.swift in Sources */,
 				B947C8FD245C2681002B9B03 /* BehaviorDetailCollectionViewCell.swift in Sources */,
@@ -565,7 +594,9 @@
 				B947C8F8245C2376002B9B03 /* BehaviorDetailViewController.swift in Sources */,
 				B9E744E5245965E70096F185 /* SceneDelegate.swift in Sources */,
 				B9E7452A245AB8F00096F185 /* EarthQuakeDetailViewController.swift in Sources */,
+				B92095CD248243A200D4B17F /* PlacesCoordinator.swift in Sources */,
 				B947C900245C2A07002B9B03 /* ReusableView.swift in Sources */,
+				B92095D1248243D400D4B17F /* NotificationsCoordinator.swift in Sources */,
 				B9E744FE245978480096F185 /* Models.swift in Sources */,
 				B9E74534245B15620096F185 /* SismicRiskTableViewCell.swift in Sources */,
 				B9E62CE52460079800DC1ADA /* DetailImageViewController.swift in Sources */,
@@ -573,6 +604,7 @@
 				B9E74525245AB2270096F185 /* EarthQuakeTableViewCell.swift in Sources */,
 				B9E7450124597BDE0096F185 /* ServicesProtocol.swift in Sources */,
 				B9E7451B2459E05E0096F185 /* EarthQuakeViewController.swift in Sources */,
+				B92095C92482425600D4B17F /* ApplicationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
